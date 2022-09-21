@@ -1,0 +1,23 @@
+/*
+  Lab 1, Circuit 2
+  Blinking an LED connected to pin D7
+  Written by Alyssa J. Pasquale, Ph.D.
+  May 13, 2017
+*/
+
+void setup()
+{
+  // Set DDRD bit 7
+  // This causes Arduino pin D7 to be an output
+  // We can use it to turn an LED on and off
+  DDRD = DDRD | 0b10000000;
+}
+
+void loop()
+{
+  //Set PORTD bit 7, causing pin D7 to toggle the value
+  PORTD = PORTD ^ 0b10000000;
+  //wait for 1000 ms
+  _delay_ms(1000);
+}
+  
